@@ -1273,9 +1273,11 @@ angular.module('ct.ui.router.extras').provider('$futureState',
               $timeout(function () {
                 if ($state.transition) {
                   $state.transition.then($urlRouter.sync, $urlRouter.sync);
-                } else {
-                  $urlRouter.sync();
                 }
+                // https://github.com/christopherthielen/ui-router-extras/issues/138
+                //} else {
+                //  $urlRouter.sync();
+                //}
               });
             });
           }
